@@ -1,0 +1,46 @@
+Git Komutları, Açıklamalar
+git init <directory>,Belirtilen dizinde boş bir Git reposu oluşturun.
+git clone <repo>,<repo> adresinde bulunan repoyu yerel makineye klonlayın.
+git config user.name <name>,Geçerli depodaki tüm taahhütler için kullanılacak yazar adını tanımlayın. 
+git add <directory>,<directory> içindeki tüm değişiklikleri bir sonraki commit için hazırlayın.
+git status,Hangi dosyaların aşamalı aşamasız ve izlenmemiş olduğunu listeleyin.
+git log,Varsayılan biçimi kullanarak tüm commit geçmişini görüntüleyin.
+git diff,Dizininiz ve çalışma dizininiz arasındaki aşamalandırılmamış değişiklikleri gösterin.
+ , 
+git branch, Deponuzdaki tüm dalları listeleyin. Şuna bir <branch> argümanı ekleyin <branch> adıyla yeni bir şube oluşturun.
+git checkout -b <branch>, <branch> adında yeni bir dal oluşturun ve kontrol edin. Mevcut bir dalı kontrol etmek için -b bayrağını bırakın.
+git merge <branch>, <branch>'ı geçerli dal ile birleştirin.
+git diff, HEAD Çalışma dizini ile son commit arasındaki farkı gösterir.
+git diff --cached, Aşamalı değişiklikler ile son işlem arasındaki farkı gösterir.
+git rebase -i <base>, Geçerli dalı <base> üzerine etkileşimli olarak yeniden yerleştirir. Girmek için düzenleyiciyi başlatır Her bir taahhüdün yeni tabana nasıl aktarılacağına ilişkin komutlar.
+git pull --rebase <remote>, Geçerli dalın uzaktaki kopyasını getirir ve yerel kopyaya yeniden yerleştirir. Dalları entegre etmek için merge yerine git rebase kullanır.
+ , 
+git commit --amen, Son işlemeyi aşamalı değişiklikler ve son işlemenin birleşimiyle değiştirin. Son commit'in mesajını düzenlemek için aşamalı hiçbir şey olmadan kullanın
+git rebase <base>, Geçerli dalı <base> üzerine yeniden yükle. <base> bir commit ID'si - dal adı - bir etiket veya HEAD'e göreli bir referans olabilir.
+git reflog, Yerel deponun HEAD'inde yapılan değişikliklerin günlüğünü gösterir. Tarih bilgisini göstermek için --relative-date veya tüm referansları göstermek için --all bayrağını ekleyin.
+ , 
+git revert <commit>, <commit> içinde yapılan tüm değişiklikleri geri alan yeni bir commit oluşturun. ardından bunu geçerli dala uygulayın.
+git reset <file>, <dosya> dosyasını hazırlama alanından kaldırır ancak çalışma dizinini değiştirmeden bırakır. Bu herhangi bir değişikliğin üzerine yazmadan bir dosyanın aşamalarını kaldırır.
+git clean -n, Çalışma dizininden hangi dosyaların kaldırılacağını gösterir. Temizleme işlemini yürütmek için -n bayrağı yerine -f bayrağını kullanın.
+ , 
+git remote add <name> <url>, Uzak bir repoya yeni bir bağlantı oluşturun. Bir uzak depo ekledikten sonra diğer komutlarda <url> için kısayol olarak <name> kullanabilirsiniz.
+git fetch <remote> <branch>, Depodan belirli bir <branch>'ı getirir. <branch>'ı bırak tüm uzak referansları getirmek için.
+git pull <remote>,Geçerli dalın belirtilen uzak kopyasını getir ve hemen yerel kopyayla birleştirin.
+git push <remote> <branch>, Dalı gerekli taahhütler ve nesnelerle birlikte <uzak>a itin. Mevcut değilse uzak depoda adlandırılmış dal oluşturur.
+ , 
+git reset, Hazırlama alanını en son işlemle eşleşecek şekilde sıfırlayın. ancak çalışma dizinini değiştirmeden bırakın.
+git reset --hard, Hazırlama alanını ve çalışma dizinini en son işlemle eşleşecek şekilde sıfırlar ve çalışma dizinindeki tüm değişikliklerin üzerine yazar.
+git config --global user.email <email>, Geçerli kullanıcının tüm taahhütleri için kullanılacak yazar e-postasını tanımlayın.
+git config --global alias. <alias-name> <git-command>, Bir Git komutu için kısayol oluşturun.
+git config --system core.editor <editor>, Makinedeki tüm kullanıcılar için komutlar tarafından kullanılan metin düzenleyiciyi ayarlayın. <editor> arg'si istenen editörü başlatan komut olmalıdır (örn. vi).
+git config --global --edit, Manuel düzenleme için genel yapılandırma dosyasını bir metin düzenleyicide açın.
+ , 
+git log -<limit>, Taahhüt sayısını <limit> ile sınırlayın.
+git log --oneline, Her bir taahhüdü tek bir satıra sıkıştırın.
+git log -p, Her işlemin tam farkını görüntüleyin.
+git log --stat, Hangi dosyaların değiştirildiğini ve her birinden eklenen veya silinen ilgili satır sayısını ekleyin.
+git log --author=”<pattern>”, Belirli bir yazarın taahhütlerini arayın.
+git log --grep=”<pattern>”, <pattern> ile eşleşen bir commit mesajına sahip commitleri arayın.
+git log <since>..<until>, <since> ile <until> arasında gerçekleşen commitleri gösterir. Args bir commit ID'si - şube adı - HEAD veya başka herhangi bir revizyon referansı olabilir.
+git log -- <file>, Yalnızca belirtilen dosyaya sahip taahhütleri görüntüler.
+git log --graph --decorate, --graph bayrağı commit msg'lerinin sol tarafına metin tabanlı bir grafik çizer. --decorate - dalların adlarını veya gösterilen taahhütlerin etiketlerini ekler.
